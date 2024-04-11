@@ -2,17 +2,23 @@ import os
 import requests
 
 def get_weather(latitude, longitude):
-    api_key = os.environ.get('OPENWEATHER_API_KEY')
-    url = f'http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={api_key}'
+    api_key = os.getenv("key")
+    url = f'https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={api_key}'
     response = requests.get(url)
     data = response.json()
-    return data
+
+    if response.status_code == 200:
+        return data
+    else:
+        raise Exception(f"Failed to retrieve weather data: {data['message']}")
 
 if __name__ == "__main__":
-    latitude = float(os.environ.get("LAT", 0.0))
-    longitude = float(os.environ.get("LONG", 0.0))
-    weather_data = get_weather(latitude, longitude)
-    print(weather_data)
+    latitude =  os.getenv('latitude')
+    longitude = os.getenv('longitude')
 
-#https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=236df28640d8e0bc71a29bd329f6a8d7
-
+    try:
+        weather_data = get_weather(latitude, longitude)
+        print("Weather data:")
+        print(weather_data)
+    except Exception as e:
+        print(f"Error: {e}")
