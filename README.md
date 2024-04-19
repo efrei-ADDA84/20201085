@@ -24,3 +24,17 @@ on run après l'image grâce à docker run.
 
 ## workflow
 On configure enfin le workflow github action afin de build et push l'image a chaque nouveau commit.
+
+
+# tp4
+
+## terraform 
+- on commence par définir les providers dans le dossier provider.tf
+- on initialise ensuite les variables dans le fichier variables.tf
+- on crée ensuite toutes les ressources dans le fichier main.tf
+   - ressource pour générer la clé ssh
+   - ressource pour créer l'interface réseau
+   - ressource pour créer la machine virtuelle
+
+## azure
+- on se connecte en utilisant az login
