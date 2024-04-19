@@ -9,6 +9,8 @@ on commence par créer le fichier python qui va appeler l'API puis le Dockerfile
  - docker push image_tp1:tag
  - docker run --env latitude="99.999" --env longitude="-99.9999" --env API_KEY="aaca89a14b3698bbd46dd966b2fa436d" image_tp1:tag
 
+le problème que j'ai rencontré et mon imcapacité à me connecter à docker desktop due a des problèmes WSL.
+
 
 # tp2 
 
@@ -24,6 +26,11 @@ on run après l'image grâce à docker run.
 
 ## workflow
 On configure enfin le workflow github action afin de build et push l'image a chaque nouveau commit.
+
+j'ai rencontré le même problème que lors du tp1.
+
+# tp3
+il s'agit de configurer le workflow github action pour créer l'image dans Azur cloud. je n'ai pas rencontré de problème particulier si ce n'est mon problème de connexion avec docker desktop.
 
 
 # tp4
