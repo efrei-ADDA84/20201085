@@ -28,7 +28,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20200510:v1
+        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20201085:v1
       env:
         OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
 
@@ -50,7 +50,7 @@ jobs:
         resource-group: ADDA84-CTP
         dns-name-label: devops-20201085
         image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20201085:v1
-        name: 20200510
+        name: 20201085
         location: 'west europe'
         registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
